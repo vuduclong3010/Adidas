@@ -12,6 +12,5 @@ namespace AdidasModels.Solution.Entities
         public DateTime ToDate { set; get; }
         public decimal? DiscountAmount { set; get; }
         public Status Status { set; get; }
-        public List<Product> Products { get; set; }
     }
 }

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdidasModels.Solution", "AdidasModels.Solution\AdidasModels.Solution.csproj", "{D194AD6C-3134-41B2-BDE4-98BA87839836}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdidasModels.Solution", "AdidasModels.Solution\AdidasModels.Solution.csproj", "{D194AD6C-3134-41B2-BDE4-98BA87839836}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdidasSolutionService", "AdidasSolutionService\AdidasSolutionService.csproj", "{B8AF5C41-AE51-4D40-8917-2D462BB25D3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdidasSolutionAPI", "AdidasSolutionAPI\AdidasSolutionAPI.csproj", "{EE1044FB-ABE7-4316-AC82-DCD70C9A0275}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D194AD6C-3134-41B2-BDE4-98BA87839836}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D194AD6C-3134-41B2-BDE4-98BA87839836}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D194AD6C-3134-41B2-BDE4-98BA87839836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8AF5C41-AE51-4D40-8917-2D462BB25D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AF5C41-AE51-4D40-8917-2D462BB25D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8AF5C41-AE51-4D40-8917-2D462BB25D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AF5C41-AE51-4D40-8917-2D462BB25D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE1044FB-ABE7-4316-AC82-DCD70C9A0275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE1044FB-ABE7-4316-AC82-DCD70C9A0275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE1044FB-ABE7-4316-AC82-DCD70C9A0275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE1044FB-ABE7-4316-AC82-DCD70C9A0275}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
