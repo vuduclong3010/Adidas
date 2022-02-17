@@ -1,6 +1,6 @@
 ﻿namespace AdidasSolutionService
 {
-    public class CategoryService
+    public class CategoryService : ICategoryService
     {
     }
 }
