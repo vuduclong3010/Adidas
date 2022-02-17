@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "AdidasSolutionDb": "Server=LONGVU;Database=AdidasSolution;Trusted_Connection=True;"
+  }
+}
