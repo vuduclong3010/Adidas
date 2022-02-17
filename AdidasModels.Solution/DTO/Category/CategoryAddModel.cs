@@ -1,9 +1,4 @@
-﻿using AdidasModels.Solution.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AdidasModels.Solution.DTO
+﻿namespace AdidasModels.Solution.DTO
 {
     public class CategoryAddModel
     {

@@ -9,6 +9,11 @@ namespace AdidasModels.Solution.Configurations
         public void Configure(EntityTypeBuilder<Comment> builder)
         {
             builder.ToTable("Comments");
+
+            builder.HasKey(x => x.Id);
+
+            builder.Property(x => x.Id).UseIdentityColumn();
+
             builder.Property(x => x.Context).IsRequired();
         }
     }
