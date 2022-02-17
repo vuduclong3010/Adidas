@@ -1,21 +1,17 @@
-﻿using AdidasModels.Solution.Entities;
-using AdidasModels.Solution.Enums;
+﻿using AdidasModels.Solution.Enums;
+using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace AdidasModels.Solution.Entitys
+namespace AdidasModels.Solution.DTO
 {
-    public class Category
+    public class CategoryAddModel
     {
-        public int Id { set; get; }
         public string Name { set; get; }
         public string SeoDescription { set; get; }
         public string SeoTitle { set; get; }
         public string SeoAlias { set; get; }
         public int SortOrder { set; get; }
-        public Status IsShowOnHome { set; get; }
         public int? ParentId { set; get; }
-
-        public List<ProductInCategory> ProductInCategories { get; set; }
-
     }
 }

@@ -24,7 +24,6 @@ namespace AdidasModels.Solution.EF
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
 
             modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
-            modelBuilder.ApplyConfiguration(new CategoryTranslationConfiguration());
             modelBuilder.ApplyConfiguration(new ContactConfiguration());
             modelBuilder.ApplyConfiguration(new TrademarkConfiguration());
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
@@ -43,10 +42,10 @@ namespace AdidasModels.Solution.EF
 
         public DbSet<Cart> Carts { get; set; }
 
-        public DbSet<CategoryTranslation> CategoryTranslations { get; set; }
-
         public DbSet<ProductInCategory> ProductInCategories { get; set; }
+
         public DbSet<Supplier> Suppliers { get; set; }
+
         public DbSet<Trademark> Trademarks { get; set; }
 
         public DbSet<Contact> Contacts { get; set; }
