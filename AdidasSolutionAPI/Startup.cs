@@ -34,7 +34,7 @@ namespace AdidasSolutionAPI
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "VietOnline API Document", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Adidas API Document", Version = "v1" });
 
                 options.AddSecurityDefinition("bearerAuth", new OpenApiSecurityScheme
                 {
