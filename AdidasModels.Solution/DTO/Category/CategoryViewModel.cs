@@ -1,4 +1,7 @@
-﻿namespace AdidasModels.Solution.DTO
+﻿using AdidasModels.Solution.Enums;
+using System.Collections.Generic;
+
+namespace AdidasModels.Solution.DTO
 {
     public class CategoryViewModel
     {
@@ -8,7 +11,12 @@
         public string SeoTitle { set; get; }
         public string SeoAlias { set; get; }
         public int SortOrder { set; get; }
-        public bool IsShowOnHome { set; get; }
-        public int? ParentId { set; get; }
+        public Status IsShowOnHome { set; get; }
+    }
+
+    public class CategoriesPaging
+    {
+        public List<CategoryViewModel> Data { get; set; }
+        public int TotalItems { get; set; }
     }
 }

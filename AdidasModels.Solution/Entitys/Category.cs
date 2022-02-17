@@ -13,7 +13,6 @@ namespace AdidasModels.Solution.Entitys
         public string SeoAlias { set; get; }
         public int SortOrder { set; get; }
         public Status IsShowOnHome { set; get; }
-        public int? ParentId { set; get; }
 
         public List<ProductInCategory> ProductInCategories { get; set; }
 

@@ -1,5 +1,4 @@
 ﻿using AdidasModels.Solution.Entitys;
-using AdidasModels.Solution.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
