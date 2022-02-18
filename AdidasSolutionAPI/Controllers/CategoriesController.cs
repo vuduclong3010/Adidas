@@ -23,10 +23,14 @@ namespace AdidasSolutionAPI.Controllers
         }
 
         [HttpGet("GetCategoryById")]
-        public async Task<CategoryViewModel> GetCategoryById(int Id)
+        public async Task<IActionResult> GetCategoryById(int Id)
         {
             var rs = await _categoryService.GetCategoryById(Id);
-            return rs;
+            if(rs != null)
+            {
+                return Ok(rs);
+            }
+            return BadRequest("Not Found Category");
         }
 
         [HttpPost("AddCategory")]
