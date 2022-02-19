@@ -1,6 +1,6 @@
 ﻿namespace AdidasSolutionService
 {
-    public class OrderService
+    public class OrderService : IOrderService
     {
     }
 }

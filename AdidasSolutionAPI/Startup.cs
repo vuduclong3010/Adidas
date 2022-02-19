@@ -35,6 +35,7 @@ namespace AdidasSolutionAPI
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<ISupplierService, SupplierService>();
             services.AddTransient<ITrademarkService, TrademarkService>();
+            services.AddTransient<IOrderService, OrderService>();
 
             services.AddSwaggerGen(options =>
             {
