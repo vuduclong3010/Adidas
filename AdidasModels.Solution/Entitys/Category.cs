@@ -2,7 +2,7 @@
 using AdidasModels.Solution.Enums;
 using System.Collections.Generic;
 
-namespace AdidasModels.Solution.Entitys
+namespace AdidasModels.Solution.Entities
 {
     public class Category
     {

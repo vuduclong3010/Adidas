@@ -1,6 +1,6 @@
 ﻿using AdidasModels.Solution.DTO;
 using AdidasModels.Solution.EF;
-using AdidasModels.Solution.Entitys;
+﻿using AdidasModels.Solution.Entities;
 using AdidasModels.Solution.Enums;
 using Microsoft.EntityFrameworkCore;
 using System;

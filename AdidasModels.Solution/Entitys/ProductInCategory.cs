@@ -1,6 +1,4 @@
-﻿using AdidasModels.Solution.Entitys;
-
-namespace AdidasModels.Solution.Entities
+﻿namespace AdidasModels.Solution.Entities
 {
     public class ProductInCategory
     {

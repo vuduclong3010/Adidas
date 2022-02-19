@@ -1,6 +1,5 @@
 ﻿using AdidasModels.Solution.Enums;
 using System;
-using System.Collections.Generic;
 
 namespace AdidasModels.Solution.Entities
 {

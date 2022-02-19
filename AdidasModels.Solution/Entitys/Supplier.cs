@@ -1,4 +1,4 @@
-﻿namespace AdidasModels.Solution.Entitys
+﻿namespace AdidasModels.Solution.Entities
 {
     public class Supplier
     {

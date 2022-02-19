@@ -1,5 +1,4 @@
-﻿using AdidasModels.Solution.Entitys;
-using AdidasModels.Solution.Enums;
+﻿using AdidasModels.Solution.Enums;
 using System;
 using System.Collections.Generic;
 

@@ -1,6 +1,5 @@
-﻿using AdidasModels.Solution.Entitys;
-using AdidasModels.Solution.Configurations;
-using AdidasModels.Solution.Entities;
+﻿using AdidasModels.Solution.Configurations;
+﻿using AdidasModels.Solution.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AdidasModels.Solution.EF

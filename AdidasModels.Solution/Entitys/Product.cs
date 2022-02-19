@@ -1,4 +1,4 @@
-﻿using AdidasModels.Solution.Entitys;
+﻿﻿using AdidasModels.Solution.Entities;
 using System;
 using System.Collections.Generic;
 
