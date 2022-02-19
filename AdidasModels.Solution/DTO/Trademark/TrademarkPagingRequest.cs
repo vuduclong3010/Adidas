@@ -2,7 +2,7 @@
 
 namespace AdidasModels.Solution.DTO
 {
-    public class SupplierPagingRequest : PagingRequestDTO
+    public class TrademarkPagingRequest : PagingRequestDTO
     {
     }
 }
