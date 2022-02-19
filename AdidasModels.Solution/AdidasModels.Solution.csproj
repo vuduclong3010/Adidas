@@ -17,8 +17,4 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTO\Trademark\" />
-  </ItemGroup>
-
 </Project>
