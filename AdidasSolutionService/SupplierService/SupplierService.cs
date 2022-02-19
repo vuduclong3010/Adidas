@@ -64,6 +64,7 @@ namespace AdidasSolutionService
                     PhoneNumber = model.PhoneNumber,
                 };
                 await _context.AddAsync(newSupplier);
+                
                 await _context.SaveChangesAsync();
                 return true;
             }

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace AdidasModels.Solution.Entities
+namespace AdidasModels.Solution.DTO
 {
-    public class Product
+    public class ProductViewModel
     {
         public int Id { get; set; }
         public decimal Price { get; set; }
@@ -11,10 +12,10 @@ namespace AdidasModels.Solution.Entities
         public int ViewCount { get; set; }
         public bool? IsFeatured { get; set; }
         public DateTime DateCreated { set; get; }
-        public int SizeId { get; set; }
-        public int SupplierId { get; set; }
-        public int TrademarkId { get; set; }
-        public int? PromotionId { get; set; }
+        public string SizeName { get; set; }
+        public string SupplierName { get; set; }
+        public string TrademarkName { get; set; }
+        public string? PromotionName { get; set; }
         public string ProductName { get; set; }
         public string Color { get; set; }
         public string SeoTitle { get; set; }
@@ -24,12 +25,11 @@ namespace AdidasModels.Solution.Entities
         public string DeGiay { get; set; }
         public float TrongLuong { get; set; }
         public string KieuDang { get; set; }
-        public List<ProductInCategory> ProductInCategories { get; set; }
-        public List<OrderDetail> OrderDetails { get; set; }
-        public List<Cart> Carts { get; set; }
-        public Size Size { get; set; }
-        public Trademark Trademark { get; set; }
-        public Supplier Supplier { get; set; }
-        public List<ProductImage> ProductImages { get; set; }
+    }
+
+    public class ProductsPaging
+    {
+        public List<ProductViewModel> Data { get; set; }
+        public int TotalItems { get; set; }
     }
 }
