@@ -1,6 +1,6 @@
 ﻿namespace AdidasSolutionService
 {
-    public class TrademarkService
+    public class TrademarkService : ITrademarkService
     {
     }
 }
