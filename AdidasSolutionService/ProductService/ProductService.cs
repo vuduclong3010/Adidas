@@ -1,10 +1,14 @@
 ﻿using AdidasModels.Solution.DTO;
 using AdidasModels.Solution.EF;
 using AdidasModels.Solution.Entities;
+using Azure.Core;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace AdidasSolutionService
@@ -12,9 +16,12 @@ namespace AdidasSolutionService
     public class ProductService : IProductService
     {
         private readonly AdidasDbContext _context;
-        public ProductService(AdidasDbContext context)
+        private readonly IStorageService _storageService;
+        private const string USER_CONTENT_FOLDER_NAME = "user-content";
+        public ProductService(AdidasDbContext context, IStorageService storageService)
         {
             _context = context;
+            _storageService = storageService;
         }
 
         public async Task<ProductsPaging> GetLisProducts(ProductPagingRequest productPagingRequest)
@@ -121,7 +128,23 @@ namespace AdidasSolutionService
                             ProductId = newProduct.Id
                         };
                         _context.ProductInCategories.Add(newProductInCategory);
+                        _context.SaveChanges();
                     }
+                }
+                if (model.ThumbnailImage != null)
+                {
+                    var newProductImage = new ProductImage()
+                    {
+                        Caption = "Thumbnail image",
+                        ProductId = newProduct.Id,
+                        DateCreated = DateTime.Now,
+                        FileSize = model.ThumbnailImage.Length,
+                        ImagePath = await this.SaveFile(model.ThumbnailImage),
+                        IsDefault = true,
+                        SortOrder = 1
+                    };
+                    _context.ProductImages.Add(newProductImage);
+                    _context.SaveChanges();
                 }
                 await _context.SaveChangesAsync();
                 return true;
@@ -243,6 +266,14 @@ namespace AdidasSolutionService
                 }
             }
             return false;
+        }
+
+        private async Task<string> SaveFile(IFormFile file)
+        {
+            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
+            return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
     }
 }

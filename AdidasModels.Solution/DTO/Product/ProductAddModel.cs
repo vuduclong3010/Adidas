@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 
 namespace AdidasModels.Solution.DTO
@@ -22,5 +23,6 @@ namespace AdidasModels.Solution.DTO
         public float TrongLuong { get; set; }
         public string KieuDang { get; set; }
         public List<ProductInCategoryAddModel> Categories { get; set; } = new List<ProductInCategoryAddModel>();
+        public IFormFile ThumbnailImage { get; set; }
     }
 }

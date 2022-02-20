@@ -33,7 +33,7 @@ namespace AdidasSolutionAPI.Controllers
         }
 
         [HttpPost("AddProduct")]
-        public async Task<bool> AddProduct(ProductAddModel model)
+        public async Task<bool> AddProduct([FromForm] ProductAddModel model)
         {
             var rs = await _productService.AddProduct(model);
             return rs;

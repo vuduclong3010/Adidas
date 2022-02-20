@@ -33,6 +33,7 @@ namespace AdidasSolutionAPI
 
 
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IStorageService, FileStorageService>();
             services.AddTransient<ISupplierService, SupplierService>();
             services.AddTransient<ITrademarkService, TrademarkService>();
             services.AddTransient<IOrderService, OrderService>();
@@ -40,6 +41,8 @@ namespace AdidasSolutionAPI
             services.AddTransient<IPromotionService, PromotionService>();
             services.AddTransient<IContactService, ContactService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IOrderService, OrderService>();
+
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "Adidas API Document", Version = "v1" });
