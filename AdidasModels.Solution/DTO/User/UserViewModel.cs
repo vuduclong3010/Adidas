@@ -2,15 +2,13 @@
 using System;
 using System.Collections.Generic;
 
-namespace AdidasModels.Solution.Entities
+namespace AdidasModels.Solution.DTO
 {
-    public class User
+    public class UserViewModel
     {
         public int Id { get; set; }
 
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
+        public string FullName { get; set; }
 
         public string Address { get; set; }
 
@@ -27,11 +25,12 @@ namespace AdidasModels.Solution.Entities
         public string Role { get; set; }
 
         public string Url { get; set; }
-
         public Status Status { get; set; }
+    }
 
-        public List<Cart> Carts { get; set; }
-
-        public List<Order> Orders { get; set; }
+    public class UsersPaging
+    {
+        public List<UserViewModel> Data { get; set; }
+        public int TotalItems { get; set; }
     }
 }

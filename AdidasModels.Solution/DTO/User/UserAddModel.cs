@@ -1,13 +1,10 @@
 ﻿using AdidasModels.Solution.Enums;
 using System;
-using System.Collections.Generic;
 
-namespace AdidasModels.Solution.Entities
+namespace AdidasModels.Solution.DTO
 {
-    public class User
+    public class UserAddModel
     {
-        public int Id { get; set; }
-
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -27,11 +24,5 @@ namespace AdidasModels.Solution.Entities
         public string Role { get; set; }
 
         public string Url { get; set; }
-
-        public Status Status { get; set; }
-
-        public List<Cart> Carts { get; set; }
-
-        public List<Order> Orders { get; set; }
     }
 }
