@@ -38,5 +38,35 @@ namespace AdidasSolutionAPI.Controllers
             var rs = await _productService.AddProduct(model);
             return rs;
         }
+
+        [HttpPost("UpdateProduct")]
+        public async Task<bool> UpdateProduct(ProductUpdateModel model)
+        {
+            return await _productService.UpdateProduct(model);
+        }
+
+        [HttpPost("DeleteProduct")]
+        public async Task<bool> DeleteProduct(int Id)
+        {
+            return await _productService.DeleteProduct(Id);
+        }
+
+        [HttpPost("UpdatePriceProduct")]
+        public async Task<bool> UpdatePriceProduct(UpdatePriceModel model)
+        {
+            return await _productService.UpdatePrice(model);
+        }
+
+        [HttpPost("UpdateViewCount")]
+        public async Task<bool> UpdateViewCount(int Id, int ViewCount)
+        {
+            return await _productService.UpdateViewCount(Id, ViewCount);
+        }
+
+        [HttpPost("UpdatePromotion")]
+        public async Task<bool> UpdatePromotion(int Id, int PromotionId)
+        {
+            return await _productService.UpdatePromotion(Id, PromotionId);
+        }
     }
 }

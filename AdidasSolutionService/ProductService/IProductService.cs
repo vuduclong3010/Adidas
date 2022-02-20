@@ -10,5 +10,8 @@ namespace AdidasSolutionService
         Task<bool> AddProduct(ProductAddModel model);
         Task<bool> UpdateProduct(ProductUpdateModel model);
         Task<bool> DeleteProduct(int Id);
+        Task<bool> UpdatePrice(UpdatePriceModel model);
+        Task<bool> UpdateViewCount(int Id, int ViewCount);
+        Task<bool> UpdatePromotion(int Id, int PromotionId);
     }
 }

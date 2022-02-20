@@ -90,9 +90,9 @@ namespace AdidasSolutionService
                     oldContact.Message = model.Message;
                     oldContact.Status = model.Status;
                     _context.Contacts.Update(oldContact);
+                    await _context.SaveChangesAsync();
+                    return true;
                 }
-                await _context.SaveChangesAsync();
-                return true;
             }
             return false;
         }

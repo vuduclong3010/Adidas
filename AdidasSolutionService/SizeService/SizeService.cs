@@ -82,9 +82,9 @@ namespace AdidasSolutionService
                     old.SizeDes = model.SizeDes;
                     old.Detail = model.Detail;
                     _context.Sizes.Update(old);
+                    await _context.SaveChangesAsync();
+                    return true;
                 }
-                await _context.SaveChangesAsync();
-                return true;
             }
             return false;
         }

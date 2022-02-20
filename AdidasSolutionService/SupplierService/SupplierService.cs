@@ -83,9 +83,9 @@ namespace AdidasSolutionService
                     oldSupplier.PhoneNumber = model.PhoneNumber;
                     oldSupplier.Address = model.Address;
                     _context.Suppliers.Update(oldSupplier);
+                    await _context.SaveChangesAsync();
+                    return true;
                 }
-                await _context.SaveChangesAsync();
-                return true;
             }
             return false;
         }

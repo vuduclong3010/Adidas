@@ -21,6 +21,6 @@ namespace AdidasModels.Solution.DTO
         public string DeGiay { get; set; }
         public float TrongLuong { get; set; }
         public string KieuDang { get; set; }
-        //public List<ProductInCategoryAddModel> Categories { get; set; } = new List<ProductInCategoryAddModel>();
+        public List<ProductInCategoryAddModel> Categories { get; set; } = new List<ProductInCategoryAddModel>();
     }
 }

@@ -92,9 +92,9 @@ namespace AdidasSolutionService
                     old.DiscountAmount = model.DiscountAmount;
                     old.Status = model.Status;
                     _context.Promotions.Update(old);
+                    await _context.SaveChangesAsync();
+                    return true;
                 }
-                await _context.SaveChangesAsync();
-                return true;
             }
             return false;
         }

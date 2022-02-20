@@ -1,4 +1,6 @@
-﻿namespace AdidasModels.Solution.Entities
+﻿using System.Collections.Generic;
+
+namespace AdidasModels.Solution.Entities
 {
     public class Size
     {
@@ -6,5 +8,7 @@
         public string Name { get; set; }
         public int SizeDes { get; set; }
         public string Detail { get; set; }
+
+        public List<Product> Products { get; set; }
     }
 }

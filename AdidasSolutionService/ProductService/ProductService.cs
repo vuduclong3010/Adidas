@@ -110,32 +110,139 @@ namespace AdidasSolutionService
                     KieuDang = model.KieuDang
                 };
                 _context.Products.Add(newProduct);
-                //if (model.Categories != null)
-                //{
-                //    foreach (var category in model.Categories)
-                //    {
-                //        var newProductInCategory = new ProductInCategory
-                //        {
-                //            CategoryId = category.CategoryId,
-                //            ProductId = newProduct.Id
-                //        };
-                //        _context.ProductInCategories.Add(newProductInCategory);
-                //    }
-                //}
+                _context.SaveChanges();
+                if (model.Categories.Count > 0)
+                {
+                    foreach (var category in model.Categories)
+                    {
+                        var newProductInCategory = new ProductInCategory
+                        {
+                            CategoryId = category.CategoryId,
+                            ProductId = newProduct.Id
+                        };
+                        _context.ProductInCategories.Add(newProductInCategory);
+                    }
+                }
                 await _context.SaveChangesAsync();
                 return true;
             }
             return false;
         }
 
-        public Task<bool> UpdateProduct(ProductUpdateModel model)
+        public async Task<bool> UpdateProduct(ProductUpdateModel model)
         {
-            throw new System.NotImplementedException();
+            if (model != null)
+            {
+                var oldProduct = await _context.Products.Where(x => x.Id == model.Id).FirstOrDefaultAsync();
+                if (oldProduct != null)
+                {
+                    oldProduct.Id = oldProduct.Id;
+                    oldProduct.Price = oldProduct.Price;
+                    oldProduct.OriginalPrice = oldProduct.OriginalPrice;
+                    oldProduct.ViewCount = oldProduct.ViewCount;
+                    oldProduct.IsFeatured = oldProduct.IsFeatured;
+                    oldProduct.DateCreated = oldProduct.DateCreated;
+                    oldProduct.SizeId = model.SizeId;
+                    oldProduct.SupplierId = model.SupplierId;
+                    oldProduct.TrademarkId = model.TrademarkId;
+                    oldProduct.PromotionId = oldProduct.PromotionId;
+                    oldProduct.ProductName = model.ProductName;
+                    oldProduct.Color = model.Color;
+                    oldProduct.SeoTitle = model.SeoTitle;
+                    oldProduct.Description = model.Description;
+                    oldProduct.Material = model.Material;
+                    oldProduct.shoelace = model.shoelace;
+                    oldProduct.DeGiay = model.DeGiay;
+                    oldProduct.TrongLuong = model.TrongLuong;
+                    oldProduct.KieuDang = model.KieuDang;
+                }
+                _context.Products.Update(oldProduct);
+                _context.SaveChanges();
+
+                if(model.Categories.Count > 0)
+                {
+                    var oldProductInCategory = await _context.ProductInCategories.Where(x => x.ProductId == oldProduct.Id).ToListAsync();
+                    foreach (var item in oldProductInCategory)
+                    {
+                        _context.Remove(item);
+                        _context.SaveChanges();
+                    }
+                    foreach (var category in model.Categories)
+                    {
+                        var newProductInCategory = new ProductInCategory
+                        {
+                            CategoryId = category.CategoryId,
+                            ProductId = oldProduct.Id
+                        };
+                        _context.ProductInCategories.Add(newProductInCategory);
+                    }
+                }
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            return false;
         }
 
-        public Task<bool> DeleteProduct(int Id)
+        public async Task<bool> DeleteProduct(int Id)
         {
-            throw new System.NotImplementedException();
+            var oldProduct = await _context.Products.Where(x => x.Id == Id).FirstOrDefaultAsync();
+            if (oldProduct != null)
+            {
+                var oldProductInCategory = await _context.ProductInCategories.Where(x => x.ProductId == oldProduct.Id).ToListAsync();
+                _context.RemoveRange(oldProductInCategory);
+                _context.Products.Remove(oldProduct);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+
+        public async Task<bool> UpdatePrice(UpdatePriceModel model)
+        {
+            if(model.Price.CompareTo(0) != 0)
+            {
+                var oldProduct = await _context.Products.Where(x => x.Id == model.Id).FirstOrDefaultAsync();
+                if(oldProduct != null)
+                {
+                    oldProduct.Price = model.Price;
+                    _context.Products.Update(oldProduct);
+                    await _context.SaveChangesAsync();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public async Task<bool> UpdateViewCount(int Id, int ViewCount)
+        {
+            if (ViewCount > 0)
+            {
+                var oldProduct = await _context.Products.Where(x => x.Id == Id).FirstOrDefaultAsync();
+                if (oldProduct != null)
+                {
+                    oldProduct.ViewCount = ViewCount;
+                    _context.Products.Update(oldProduct);
+                    await _context.SaveChangesAsync();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public async Task<bool> UpdatePromotion(int Id, int PromotionId)
+        {
+            if (PromotionId > 0)
+            {
+                var oldProduct = await _context.Products.Where(x => x.Id == Id).FirstOrDefaultAsync();
+                if (oldProduct != null)
+                {
+                    oldProduct.PromotionId = PromotionId;
+                    _context.Products.Update(oldProduct);
+                    await _context.SaveChangesAsync();
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
