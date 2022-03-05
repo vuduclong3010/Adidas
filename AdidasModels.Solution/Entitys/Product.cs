@@ -1,5 +1,4 @@
-﻿﻿using AdidasModels.Solution.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace AdidasModels.Solution.Entities

@@ -28,6 +28,8 @@ namespace AdidasModels.Solution.Entities
 
         public string Url { get; set; }
 
+        public Status Status { get; set; }
+
         public List<Cart> Carts { get; set; }
 
         public List<Order> Orders { get; set; }

@@ -15,5 +15,9 @@
     <ProjectReference Include="..\AdidasSolutionService\AdidasSolutionService.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\user-content\" />
+  </ItemGroup>
+
 
 </Project>

@@ -77,9 +77,9 @@ namespace AdidasSolutionService
                     old.Id = model.Id;
                     old.Name = model.Name;
                     old.Despripation = model.Despripation;
+                    await _context.SaveChangesAsync();
+                    return true;
                 }
-                await _context.SaveChangesAsync();
-                return true;
             }
             return false;
         }

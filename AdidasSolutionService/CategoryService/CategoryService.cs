@@ -96,9 +96,9 @@ namespace AdidasSolutionService
                     oldCategory.SeoAlias = model.SeoAlias;
                     oldCategory.IsShowOnHome = model.IsShowOnHome;
                     _context.Categories.Update(oldCategory);
+                    await _context.SaveChangesAsync();
+                    return true;
                 }
-                await _context.SaveChangesAsync();
-                return true;
             }
             return false;
         }

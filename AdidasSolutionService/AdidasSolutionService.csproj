@@ -1,8 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Result\**" />
+    <EmbeddedResource Remove="Result\**" />
+    <None Remove="Result\**" />
+  </ItemGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <PackageReference Include="Azure.Core" Version="1.22.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="3.1.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AdidasModels.Solution\AdidasModels.Solution.csproj" />
