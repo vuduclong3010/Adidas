@@ -1,3 +1,4 @@
+using AdidasModels.Solution.DTO.Appsetting;
 using AdidasModels.Solution.EF;
 using AdidasSolutionService;
 using AutoMapper;
@@ -30,6 +31,7 @@ namespace AdidasSolutionAPI
 
             services.AddDbContext<AdidasDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("AdidasSolutionDb")));
+            services.Configure<Appsettings>(Configuration.GetSection("AppSettings"));
 
 
             services.AddTransient<ICategoryService, CategoryService>();

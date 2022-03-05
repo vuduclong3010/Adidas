@@ -58,12 +58,12 @@ namespace AdidasSolutionService
 
         public async Task<IApiResult> SendMail(SendMailViewModel model)
         {
-            var FromEmailAddress = "adidas.solution.mail@gmail.com";
-            var FromEmailPassword = "123@123a";
-            var FromEmailDisplayName = "Order Confirmation - Order";
-            var SMTPHost = "smtp.gmail.com";
-            var SMTPPort = 587;
-            var EnabledSSL = true;
+            var FromEmailAddress = _appSettings.FromEmailAddress;
+            var FromEmailPassword = _appSettings.FromEmailPassword;
+            var FromEmailDisplayName = _appSettings.FromEmailDisplayName;
+            var SMTPHost = _appSettings.SMTPHost;
+            var SMTPPort = _appSettings.SMTPPort;
+            var EnabledSSL = _appSettings.EnabledSSL;
             try
             {
                 using (MailMessage mail = new MailMessage(FromEmailAddress, model.To))
@@ -79,8 +79,8 @@ namespace AdidasSolutionService
                     SmtpClient smtp = new SmtpClient
                     {
                         Host = SMTPHost,
-                        EnableSsl = EnabledSSL,
-                        Port = SMTPPort
+                        EnableSsl = bool.Parse(EnabledSSL),
+                        Port = int.Parse(SMTPPort)
                     };
                     NetworkCredential networkCredential = new NetworkCredential(FromEmailAddress, FromEmailPassword);
                     smtp.UseDefaultCredentials = true;
